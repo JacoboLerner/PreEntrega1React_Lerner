@@ -1,7 +1,9 @@
+import "./ItemListContainer.css"
+
 const ItemListContainer = ({greeting})=> {
     return (
         <div>
-            <h1>{greeting}</h1>
+            <h1 className="listTitulo d-flex justify-content-center">{greeting}</h1>
         </div>
     )
 }
