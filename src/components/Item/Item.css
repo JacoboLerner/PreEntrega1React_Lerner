@@ -1,0 +1,18 @@
+.carta {
+    width: 18rem;
+    background-color: brown;
+}
+
+@media(min-width:1200px) {
+    .carta {
+        width: 10rem;
+        background-color: red;
+    }
+}
+
+
+.imagen_camiseta{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

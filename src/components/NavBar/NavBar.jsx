@@ -18,7 +18,7 @@ const Navbar =()=>{
                 </button>
                 <div className="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li className="nav-item p-2 ">
+                        <li className="nav-item p-2">
                             <button {...botone} >Camisetas</button>
                         </li>
                         <li className="nav-item p-2">
