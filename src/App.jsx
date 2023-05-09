@@ -4,15 +4,24 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemCount from './components/ItemCount/ItemCounts';
 import "./App.css"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
+import { BrowserRouter,Route, Routes } from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">  
+    <BrowserRouter >
       <Navbar/>
-      <ItemListContainer greeting={"¡Bienvenidos a la Tienda del Basket!"}/>
-      <ItemDetailContainer itemId={4}/>
+
+      <Routes>
+        <Route exact path="/" element={<ItemListContainer greeting={"¡Bienvenidos a la Tienda del Basket!"}/>} />
+        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/productos" element={<ItemListContainer/>}/>
+        <Route path="/productos/:categoria" element={<ItemListContainer/>}/>
+      </Routes>
+      
+
+    </BrowserRouter>
       
     </div>
   );

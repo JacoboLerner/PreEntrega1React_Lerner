@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Item.css"
 
 
@@ -12,7 +13,9 @@ const Item =({id,nombre,img,precio,stock,categoria})=>{
                 <p className="card-text" style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem' }}>Precio: $ {precio}</p>
                 <p className="card-text" style={{ fontSize: '0.975rem', marginBottom: '1rem' }}>Stock: {stock}</p>
                 <div className="d-flex justify-content-center">
-                <button href={`/Item/${id}`} type="button" className="btn btn-sm btn-outline-secondary" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>Ver mas</button>
+                    <Link to={`/Item/${id}`}>
+                        <button type="button" className="btn btn-sm btn-outline-secondary" style={{ fontSize: '0.875rem', fontWeight: 'bold' }}>Ver mas</button>
+                    </Link>           
                 </div>
             </div>
         </div>

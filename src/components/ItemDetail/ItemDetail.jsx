@@ -2,7 +2,7 @@ import ItemCount from "../ItemCount/ItemCounts"
 
 const ItemDetail = ({item}) => {
     return (
-        <div className="container pt-3 pb-3 ">
+        <div className="container pt-5 pb-3 ">
             <div className="producto-detalle">
                 <img src={item.img} alt={item.nombre} />
                 <div>
