@@ -20,4 +20,4 @@ const ItemDetailContainer = ({itemId}) => {
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer 

@@ -18,7 +18,7 @@ const ItemListContainer = ({greeting})=> {
     return (
         <div>
             <h1 className=" listTitulo d-flex text-center justify-content-center">{greeting}</h1>
-            <h2 className=" listTitulo d-flex text-center justify-content-center">Productos</h2>
+            <h2 className=" listTitulo d-flex text-center justify-content-center pb-4">Productos</h2>
             <ItemList productos={productos}/>
         </div>
     )

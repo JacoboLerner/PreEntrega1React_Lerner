@@ -1,15 +1,14 @@
 .carta {
     width: 18rem;
-    background-color: brown;
 }
 
-@media(min-width:1200px) {
+
+
+@media(max-width:681px) {
     .carta {
-        width: 10rem;
-        background-color: red;
+        width: 26rem;
     }
 }
-
 
 .imagen_camiseta{
     width: 100%;
