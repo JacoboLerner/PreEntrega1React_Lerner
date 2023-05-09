@@ -12,17 +12,13 @@ function App() {
     <div className="App">  
     <BrowserRouter >
       <Navbar/>
-
       <Routes>
-        <Route exact path="/" element={<ItemListContainer greeting={"¡Bienvenidos a la Tienda del Basket!"}/>} />
+        <Route path="/" element={<ItemListContainer greeting={"¡Bienvenidos a la Tienda del Basket!"}/>} />
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route path="/productos" element={<ItemListContainer/>}/>
         <Route path="/productos/:categoria" element={<ItemListContainer/>}/>
       </Routes>
-      
-
-    </BrowserRouter>
-      
+    </BrowserRouter>      
     </div>
   );
 }
