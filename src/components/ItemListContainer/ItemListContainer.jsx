@@ -7,14 +7,14 @@ import { useParams } from "react-router-dom"
 const ItemListContainer = ({greeting})=> {
     const [productos, setProductos]= useState([])
     const [titulo,setTitulo]=useState("Productos")
-    const categoria=useParams().categoria
+    const categoriaId=useParams().categoriaId
 
     useEffect(()=>{
         getProductos()
         .then (respuesta=> {
-            if (categoria){
-                setProductos(respuesta.filter((prod)=> prod.categoria === categoria));
-                setTitulo(categoria);
+            if (categoriaId){
+                setProductos(respuesta.filter((prod)=> prod.categoria === categoriaId));
+                setTitulo(categoriaId);
             } else{
                 setProductos(respuesta)
                 setTitulo("Productos");
@@ -24,7 +24,7 @@ const ItemListContainer = ({greeting})=> {
         .catch(error =>{
             console.error(error)
         })
-    },[categoria])
+    },[categoriaId])
     return (
         <div>
             <h1 className=" listTitulo d-flex text-center justify-content-center">{greeting}</h1>

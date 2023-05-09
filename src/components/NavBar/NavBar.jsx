@@ -32,17 +32,17 @@ const Navbar =()=>{
                             </Link>      
                         </li>
                         <li className="nav-item p-2">
-                            <Link to="/productos/camisetas">
+                            <Link to="/categorias/camisetas">
                                 <button {...botone} >Camisetas</button>
                             </Link>      
                         </li>
                         <li className="nav-item p-2">
-                            <Link to="/productos/zapatillas">
+                            <Link to="/categorias/zapatillas">
                                 <button {...botone} >Zapatillas</button>
                             </Link>      
                         </li>
                         <li className="nav-item p-2">
-                            <Link to="/productos/accesorios">
+                            <Link to="/categorias/accesorios">
                                 <button {...botone} >Accesorios</button>
                             </Link>      
                         </li>
