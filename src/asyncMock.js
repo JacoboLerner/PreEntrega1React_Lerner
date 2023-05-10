@@ -18,7 +18,7 @@ const productos =[
         "categoria": "camisetas",
         "img":"https://images.footballfanatics.com/chicago-bulls/chicago-bulls-nike-icon-edition-swingman-jersey-red-zach-lavine-unisex_ss4_p-13349360+u-19uldcrd526myh4dzm8r+v-c02ada147a104f999eb430ce88cb05d7.jpg?_hv=2&w=600",
         "stock": 10,
-        "descripcion":"Un clasico de legendas"
+        "descripcion":"Un clasico de leyendas"
     }    ,
     {
         "id": 3,
