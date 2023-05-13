@@ -5,6 +5,7 @@ import ItemCount from './components/ItemCount/ItemCounts';
 import "./App.css"
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/productos" element={<ItemListContainer/>}/>
         <Route path="/categorias/:categoriaId" element={<ItemListContainer/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>      
     </div>
   );
