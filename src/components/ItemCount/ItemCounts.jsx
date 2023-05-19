@@ -10,7 +10,9 @@ const ItemCount =({stock,inicial, onAdd})=>{
     const sumar =()=>{
         if (cantidad <stock){
             setCantidad(cantidad + 1)
-        }
+        }else{
+            alert("¡No hay mas stock!")
+         }
     }
 
     const restar =()=> {
