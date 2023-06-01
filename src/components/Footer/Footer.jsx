@@ -11,7 +11,7 @@ function Footer() {
                         </p>
                     </div>
                     <div className="col-md-6">
-                        <ul className="list-unstyled  text-md-right">
+                        <ul className="list-unstyled text-md-right">
                         <li>
                             <a >Politica de Privacidad</a>
                         </li>

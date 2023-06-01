@@ -12,6 +12,13 @@
     min-height: 55vh;
 }
 
+.greeting{
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+
+}
 .interesante{
     font-size: 36px;
     font-weight: 700;

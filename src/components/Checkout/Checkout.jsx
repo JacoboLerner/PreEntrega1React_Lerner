@@ -68,9 +68,9 @@ const Checkout = () => {
                     </form>
                     <div>
                         {((client.email != client.email_2)||(!client.nombre || !client.telefono)) ? (
-                            <button className="btn btn-outline-primary text-center mt-5 ml-5" onClick={() => endPurchase()}>Finalizar Compra</button>
+                            <button className="btn btn-outline-primary text-center mt-5 " onClick={() => endPurchase()}>Finalizar Compra</button>
                         ) : (
-                            <Link to="/" className="btn btn-outline-primary text-center mt-5 ml-5" onClick={() => endPurchase()}>Finalizar Compra</Link>
+                            <Link to="/" className="btn btn-outline-primary text-center mt-5 " onClick={() => endPurchase()}>Finalizar Compra</Link>
                         )
                         }
                     </div>    

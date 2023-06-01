@@ -5,7 +5,7 @@ import "./Item.css"
 const Item =({id,nombre,img,precio,stock,categoria})=>{
 
     return (
-        <div className="card col col-xxl-2 col-xl-2 col-lg-3  col-md-5 col-sm-5 col-10 mb-4 shadow-sm rounded border border-dark carta" >
+        <div className="card col col-xxl-2 col-xl-2 col-lg-3 col-md-5 col-sm-5 col-10 mb-4 shadow-sm rounded border border-dark carta" >
         <img src={img} className="card-img-top imagen_camiseta pt-2" alt={nombre}/>
             <div className="card-body  " >
                 <h5 className="card-title" style={{ fontSize: '1.25rem' }}>{nombre}</h5>

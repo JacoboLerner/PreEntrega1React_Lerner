@@ -28,7 +28,7 @@ const ItemListContainer = ({greeting})=> {
           const arrayResultado = resultado.docs.map((doc) => doc.data())
             setProductos(arrayResultado)
             setLoading(false)
-            setTitulo("Productos")
+            setTitulo("Todos los Productos")
 					})
 				})
         .catch(() => {
@@ -42,14 +42,14 @@ const ItemListContainer = ({greeting})=> {
 
     if(loading){
         return( 
-        <div className="spinner pt-5">
+        <div className="spinner pt-3">
             <MySpinner/>
         </div>
         )
       }else{
         return (
           <div>
-              <h1 className=" listTitulo d-flex text-center justify-content-center">{greeting}</h1>
+              <h1 className=" listTitulo d-flex text-center justify-content-center greeting">{greeting}</h1>
               <ItemList productos={productos} titulo= {titulo}/>
           </div>
     )

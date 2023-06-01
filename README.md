@@ -1,6 +1,8 @@
-En este repositorio encontrarás el código fuente de mi desafío final del curso de React JS de Coderhouse. El mismo trata de la simulación de un e-commerce de un emprendimiento de Basquet, incluyendo articulos como camisetas, zapatillas y accesorios mas actuales.
+En este repositorio encontrarás el código fuente de mi desafío final del curso de React JS de Coderhouse. El mismo trata de la simulación de un e-commerce de un emprendimiento de Basquet, incluyendo articulos como camisetas, zapatillas y accesorios mas actuales. 
 
-Librerias utilizadas
+![image](https://github.com/JacoboLerner/PreEntrega2React_Lerner/assets/122404983/a51684e0-a4ea-4697-be59-9e11f462e784)
+
+Librerias utilizadas:
 react 18+
 react-dom 18+
 react-router-dom 6+
