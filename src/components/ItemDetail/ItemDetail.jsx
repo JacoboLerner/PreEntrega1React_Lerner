@@ -10,12 +10,7 @@ const ItemDetail = ({id,nombre,precio,descripcion,categoria,img,stock}) => {
 
     const handleOnAdd = (cantidad)=> {
         setCantidadAgregada(cantidad)
-
-
-        const item ={
-            id, nombre, precio,img, categoria, stock
-        }
-
+        const item ={id, nombre, precio,img, categoria, stock }
         addItem(item,cantidad)
     }
     return (
@@ -28,15 +23,13 @@ const ItemDetail = ({id,nombre,precio,descripcion,categoria,img,stock}) => {
                     <p className="categoria">Categoria: {categoria}</p>
                     <p className="precio">Precio:${precio}</p>
                     <div>
-                        {
-                        cantidadAgregada > 0 ? (
+                        {cantidadAgregada > 0 ? (
                             <Link to="/cart" className="btn btn-warning justify-center" onClick={setCarrito}>Terminar Compra</Link>
                         ) : (
                             <ItemCount inicial ={1} stock ={stock} onAdd ={handleOnAdd}/>
                         )
                         }
-                    </div>
-                    
+                    </div>                    
                 </div>
             </div>
         </div>

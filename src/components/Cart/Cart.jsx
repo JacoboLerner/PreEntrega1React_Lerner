@@ -8,14 +8,12 @@ import { toast } from "react-toastify"
 const Cart =()=>{
     const {cartlist,  vaciarCart, totalPrice, cartCounter}= useContext(CartContext)
     return (
-        <section className="cartList mt-3 p-3">
+        <section className="cartList mt-3 p-3 carrito-listado">
                 <h2 className='ml-5 fontDetail'><b>Carrito</b></h2>
                 {cartlist.map(item => (CartItem ({item})))}
                 <hr className='mt-1'></hr>
                 <div className='totalprice-cart row p-3'>
-                    {totalPrice() === 0
-                        ? null 
-                        : <h3 className="mr-5 p-3 botones-cart rounded">Precio total: ${totalPrice()}</h3>}
+                    {totalPrice() === 0 ? null : <h3 className="mr-5 p-3 botones-cart rounded">Precio total: ${totalPrice()}</h3>}
                     {cartCounter() === 0 
                     ?  <div className='ml-5 font-carrito p-3'>
                             <p className='mr-5'>El carrito está vacio</p>

@@ -13,7 +13,7 @@ const CartItem =({item})=>{
             </div>
             <div className="col-md-8">
                 <div className="card-body" key={item.id}>
-                    <h5 className="card-title">{item.titulo}</h5>
+                    <h5 className="card-title p-1">{item.nombre}</h5>
                     <div className="row">
                         <p className="ml-3 mr-5">{item.cantidad} x ${item.precio}</p>
                         <p>Total Parcial : ${item.cantidad * item.precio}</p>

@@ -2,8 +2,6 @@
     width: 18rem;
 }
 
-
-
 @media(max-width:681px) {
     .carta {
         width: 26rem;

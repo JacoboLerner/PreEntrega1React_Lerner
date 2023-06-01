@@ -24,19 +24,18 @@ const ItemListContainer = ({greeting})=> {
           setTitulo(categoriaId)
 		} else {
 			pedido
-          .then((resultado) => {
-            resultado.docs.forEach(doc => {
-              const arrayResultado = resultado.docs.map((doc) => doc.data())
-              setProductos(arrayResultado)
-              setLoading(false)
-              setTitulo("Productos")
+        .then((resultado) => {resultado.docs.forEach(doc=> {
+          const arrayResultado = resultado.docs.map((doc) => doc.data())
+            setProductos(arrayResultado)
+            setLoading(false)
+            setTitulo("Productos")
 					})
 				})
-          .catch((error) => {
-            console.error("Error al cargar productos");
+        .catch(() => {
+        console.error("Error al cargar productos");
 				})
-          .finally(() => {
-            setLoading(false)
+        .finally(() => {
+          setLoading(false)
 				})
 		}
 	}, [categoriaId])
@@ -46,14 +45,13 @@ const ItemListContainer = ({greeting})=> {
         <div className="spinner pt-5">
             <MySpinner/>
         </div>
-
         )
       }else{
-    return (
-        <div>
-            <h1 className=" listTitulo d-flex text-center justify-content-center">{greeting}</h1>
-            <ItemList productos={productos} titulo= {titulo}/>
-        </div>
+        return (
+          <div>
+              <h1 className=" listTitulo d-flex text-center justify-content-center">{greeting}</h1>
+              <ItemList productos={productos} titulo= {titulo}/>
+          </div>
     )
 }}
 

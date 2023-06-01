@@ -10,6 +10,7 @@ import Cart from './components/Cart/Cart';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Checkout from './components/Checkout/Checkout';
+import PublicidadNBAPass from './components/PublicidadNBAPass/PublicidadNBAPass';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
+        <PublicidadNBAPass/>
         <Footer className="pt-5"/>
         <ToastContainer/>
       </CartProvider>

@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 import { toast } from 'react-toastify'
 import { db } from "../../servicios/firebase/firebaseConfig"
-import { addDoc, collection, documentId, getDocs, query, serverTimestamp, where, writeBatch } from "firebase/firestore"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { Link } from 'react-router-dom'
 
 const Checkout = () => {
@@ -20,8 +20,7 @@ const Checkout = () => {
             date: serverTimestamp(),
             total: totalPrice()
             }
-            
-    
+                
         const ordenesCollection = collection(db, "ordenes")
         const pedido = addDoc(ordenesCollection, orden)
 
@@ -52,7 +51,7 @@ const Checkout = () => {
         }  
 
     return (
-    <div className="mt-4 mb-4 ml-5 p-3 rounded botones-cart container">
+    <div className="mt-4 mb-4 ml-5 p-3 rounded botones-cart container ">
                     <h1 className='mr-5'>Precio total: ${totalPrice()}</h1>
                     <h2 >Datos para confirmar la compra</h2>
                     <form className="form ml-5">
@@ -68,8 +67,7 @@ const Checkout = () => {
                         </div>
                     </form>
                     <div>
-                        {
-                        ((client.email != client.email_2)||(!client.nombre || !client.telefono)) ? (
+                        {((client.email != client.email_2)||(!client.nombre || !client.telefono)) ? (
                             <button className="btn btn-outline-primary text-center mt-5 ml-5" onClick={() => endPurchase()}>Finalizar Compra</button>
                         ) : (
                             <Link to="/" className="btn btn-outline-primary text-center mt-5 ml-5" onClick={() => endPurchase()}>Finalizar Compra</Link>

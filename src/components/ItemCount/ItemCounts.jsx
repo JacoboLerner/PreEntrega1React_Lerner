@@ -2,9 +2,6 @@ import { useState } from "react"
 import "./ItemCount.css"
 import { toast } from "react-toastify"
 
-
-
-
 const ItemCount =({stock,inicial, onAdd})=>{
     const [cantidad, setCantidad]= useState (inicial)
 
@@ -13,9 +10,8 @@ const ItemCount =({stock,inicial, onAdd})=>{
             setCantidad(cantidad + 1)
         }else{
             toast.error("¡No hay mas stock!")
-         }
+        }
     }
-
     const restar =()=> {
         if (cantidad >1){
             setCantidad(cantidad - 1)

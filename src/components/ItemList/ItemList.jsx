@@ -1,4 +1,4 @@
-import toCapital from "../../mayuscula"
+import toCapital from "../../herramientas/mayuscula"
 import Item from "../Item/Item"
 
 const ItemList =({productos,titulo})=>{

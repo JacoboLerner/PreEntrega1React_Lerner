@@ -34,14 +34,14 @@ const ItemDetailContainer = () => {
       )
     }else if(!item.nombre){
       return (
-      <div className="p-3">
+      <div className="p-3 detallle">
         <h2>¡Hubo un error en la busqueda de su producto!</h2>
         <Link to='/' className= "btn btn-outline-warning">Volver a Productos</Link>
       </div>
     )
   }else{
     return (
-    <div>
+    <div className="detallle">
       {item && <ItemDetail id={item.id} nombre={item.nombre} img={item.img} categoria={item.categoria} stock={item.stock} precio={item.precio} descripcion={item.descripcion}/>}
     </div>
   )

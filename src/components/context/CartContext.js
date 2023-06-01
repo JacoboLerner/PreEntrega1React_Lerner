@@ -13,7 +13,7 @@ export const CartProvider = ({children})=> {
         ? sumarCantidad(item, cantidad) 
         : setCartlist([...cartlist, {...item, cantidad}])
         localStorage.setItem("carrito", JSON.stringify(cartlist));
-     }
+    }
     
     const removeItem = (itemId)=>{
         const cartActualizado = cartlist.filter(prod => prod.id !== itemId)

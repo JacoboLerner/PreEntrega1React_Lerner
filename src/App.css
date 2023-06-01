@@ -7,6 +7,17 @@
 .spinner{
     min-height: 100vh;
 }
+
+.carrito-listado{
+    min-height: 55vh;
+}
+
+.interesante{
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 .producto-detalle {
     padding-block: 2rem;
     display: grid;
@@ -44,6 +55,11 @@
 
 .producto-detalle img {
     width: 100%;
+}
+
+.producto-detalle-2 img{
+    width: auto;
+    max-height: 180px;
 }
 
 .descripcion  {
