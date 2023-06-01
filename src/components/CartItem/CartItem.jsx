@@ -7,9 +7,9 @@ const CartItem =({item})=>{
     const { removeItem}= useContext(CartContext)
 
     return (
-        <div className="row g-0 ml-5 mb-5 mt-5">
+        <div className="row g-0 ml-5 mb-3 p-4 mt-3 cart-item rounded">
             <div className="col-md-3">
-                <img src={item.img} className="img-fluid rounded-start img-cart" alt={item.descripcion}/>
+                <img src={item.img} className="img-fluid rounded img-cart " alt={item.descripcion}/>
             </div>
             <div className="col-md-8">
                 <div className="card-body" key={item.id}>

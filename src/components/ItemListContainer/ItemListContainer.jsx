@@ -1,42 +1,49 @@
 import { useEffect, useState } from "react"
 import "./ItemListContainer.css"
-import { getProductos } from "../../asyncMock"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 import MySpinner from "../Spinner/Spinner"
+import { db } from "../../servicios/firebase/firebaseConfig"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = ({greeting})=> {
     const [loading, setLoading] = useState(true)
-    const [productos, setProductos]= useState([])
-    const [titulo,setTitulo]=useState("Productos")
+    const [productos, setProductos] = useState([])
     const categoriaId=useParams().categoriaId
+    const [titulo,setTitulo]=useState("Productos")
+  
+  useEffect(() => {
+    const productosCollection = collection(db, "articulos")
+    const pedido = getDocs(productosCollection)
 
-    useEffect(()=>{
-        getProductos()
-        .then (respuesta=> {
-            if (categoriaId){
-                setProductos(respuesta.filter((prod)=> prod.categoria === categoriaId));
-                setTitulo(categoriaId)
-                .finally(() => setLoading(false))
-            } else{
-                setProductos(respuesta)
-                setTitulo("Productos");
-                setLoading(false)
-            }
-            
-        })
-        .catch(error =>{
-            console.error(error)
-        }
-        
-        ).finally(() => {
+    if(categoriaId){
+        const queryCollectionCategory = query(collection(db, "articulos"), where("categoria", "==", categoriaId))
+        getDocs(queryCollectionCategory)
+          .then(resp => setProductos(resp.docs.map(prod => (prod.data()))))
+          .finally(() => setLoading(false))
+          setTitulo(categoriaId)
+		} else {
+			pedido
+          .then((resultado) => {
+            resultado.docs.forEach(doc => {
+              const arrayResultado = resultado.docs.map((doc) => doc.data())
+              setProductos(arrayResultado)
+              setLoading(false)
+              setTitulo("Productos")
+					})
+				})
+          .catch((error) => {
+            console.error("Error al cargar productos");
+				})
+          .finally(() => {
             setLoading(false)
 				})
-    },[categoriaId])
+		}
+	}, [categoriaId])
 
     if(loading){
         return( 
-        <div className="spinner">
+        <div className="spinner pt-5">
             <MySpinner/>
         </div>
 

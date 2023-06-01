@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import { pedirItemPorID } from "../../asyncMock";
+import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MySpinner from "../Spinner/Spinner";
-
+import { db } from "../../servicios/firebase/firebaseConfig";
+import { getDoc, doc } from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -12,18 +12,34 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        pedirItemPorID(Number(id))
-        .then((res)=>{
-        setItem(res);
-    })
-    .finally(() => setLoading(false))
+      setLoading(true)
+      const docRef =doc (db, "articulos", id)
+
+      getDoc(docRef)
+      .then(response => {
+        const data =response.data()
+        const itemAdapted ={ id: response.id,...data}
+        setItem(itemAdapted)
+        console.log(itemAdapted)
+      })
+      .catch(error=>{console.log(error)
+      })
+      .finally(() => {setLoading(false)
+      })
     },[id])
 
     if(loading){
       return( 
         <MySpinner/>
       )
-    }else{
+    }else if(!item.nombre){
+      return (
+      <div className="p-3">
+        <h2>¡Hubo un error en la busqueda de su producto!</h2>
+        <Link to='/' className= "btn btn-outline-warning">Volver a Productos</Link>
+      </div>
+    )
+  }else{
     return (
     <div>
       {item && <ItemDetail id={item.id} nombre={item.nombre} img={item.img} categoria={item.categoria} stock={item.stock} precio={item.precio} descripcion={item.descripcion}/>}

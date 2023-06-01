@@ -1,3 +1,14 @@
+En este repositorio encontrarás el código fuente de mi desafío final del curso de React JS de Coderhouse. El mismo trata de la simulación de un e-commerce de un emprendimiento de Basquet, incluyendo articulos como camisetas, zapatillas y accesorios mas actuales.
+
+Librerias utilizadas
+react 18+
+react-dom 18+
+react-router-dom 6+
+react-scripts 5+
+firebase 9+
+react-toastify 9+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -16,6 +16,14 @@
     border-radius: 15px;
 }
 
+.cart-item{
+    background-color:rgb(255, 201, 100) ;
+}
+
+.botones-cart{
+    background-color: rgb(167, 166, 166);
+}
+
 @media (max-width:1000px){
     .producto-detalle{
         grid-template-columns: 1fr 1fr;
